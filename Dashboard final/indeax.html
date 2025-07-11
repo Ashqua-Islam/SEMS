@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Energy Management System</title>
+
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside id="sidebar" class="closed">
+    <div class="brand">⚡ Energy MS</div>
+    <nav>
+      <a href="#overview" class="active"><i class="fa-solid fa-gauge"></i> Overview</a>
+      <a href="#devices"><i class="fa-solid fa-plug"></i> Devices</a>
+      <a href="#alerts"><i class="fa-solid fa-bell"></i> Alerts</a>
+      <a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a>
+    </nav>
+  
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Top bar -->
+    <header class="main-header">
+        <div class="header-left">
+            <button id="menuBtn"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+ <div class="header-center">
+    <h1>Smart Energy Management System</h1>
+ </div>
+
+      <div class="top-right">
+        <div id="clock"></div>
+        <button id="darkToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i> </button>
+        <div class="profile" id="profileMenu">
+          <img src="https://www.gravatar.com/avatar/?d=mp" alt="User" />
+          <span>User <i class="fa-solid fa-caret-down"></i></span>
+          <div class="dropdown" id="dropdownMenu">
+            <a href="#profile">View Profile</a>
+            <a href="#loginBtn" id="loginBtn">Login</a>
+            <a href="#logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- KPI Cards -->
+    <section class="cards" id="overview">
+      <div class="card">
+        <h3>Daily Consumption</h3>
+        <p id="kwhDay">–</p>
+        <span>kWh today</span>
+      </div>
+      <div class="card">
+        <h3>Weekly Consumption</h3>
+        <p id="kwhWeek">–</p>
+        <span>kWh this week</span>
+      </div>
+      <div class="card">
+        <h3>Monthly Consumption</h3>
+        <p id="kwhMonth">–</p>
+        <span>kWh this month</span>
+      </div>
+      <div class="card">
+        <h3>Current (I)</h3>
+        <p id="ampNow">–</p>
+        <span>Amperes</span>
+      </div>
+      <div class="card">
+        <h3>Voltage (V)</h3>
+        <p id="voltNow">–</p>
+        <span>Volts</span>
+      </div>
+    </section>
+
+    <!-- Charts Row 1 -->
+    <section class="chart-grid">
+      <div class="chart-box">
+        <h3>Load Profile – 24 h</h3>
+        <canvas id="energyLine"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Weekly Consumption</h3>
+        <canvas id="weeklyBar"></canvas>
+      </div>
+    </section>
+
+    <!-- Charts Row 2 -->
+    <section class="chart-grid">
+      <div class="chart-box">
+        <h3>Monthly Consumption</h3>
+        <canvas id="monthlyBar"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Current vs Voltage (Live)</h3>
+        <canvas id="ivPie"></canvas>
+      </div>
+    </section>
+
+    <!-- Alerts -->
+    <section id="alerts" class="alert-section">
+      <h2>Active Alerts</h2>
+      <ul id="alertList"><li>No alerts 🎉</li></ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 Smart Energy Management System</footer>
+  </div>
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+  
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
