@@ -221,3 +221,16 @@ document.addEventListener("DOMContentLoaded", () => {
     detectRetina: true
   });
 });
+
+function calculateCost() {
+  const units = parseFloat(document.getElementById("unitInput").value);
+  const rate = parseFloat(document.getElementById("rateInput").value);
+  const resultBox = document.getElementById("costResult");
+
+  if (!isNaN(units) && !isNaN(rate) && units >= 0 && rate >= 0) {
+    const cost = units * rate;
+    resultBox.textContent = `Estimated Cost: ₹${cost.toFixed(2)}`;
+  } else {
+    resultBox.textContent = "Please enter valid units and rate.";
+  }
+}
