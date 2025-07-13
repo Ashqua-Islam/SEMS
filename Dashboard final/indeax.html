@@ -33,6 +33,7 @@
       <a href="#overview" class="active"><i class="fa-solid fa-gauge"></i> Overview</a>
       <a href="#devices"><i class="fa-solid fa-plug"></i> Devices</a>
       <a href="#alerts"><i class="fa-solid fa-bell"></i> Alerts</a>
+        <a href="#cost-calculator"><i class="fa-solid fa-indian-rupee-sign"></i> Cost</a>
       <a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a>
     </nav>
   </aside>
@@ -121,6 +122,18 @@
       <h2>Active Alerts</h2>
       <ul id="alertList"><li>No alerts 🎉</li></ul>
     </section>
+
+    <section id="cost-calculator" class="cost-calculator-section">
+  <h2>Electricity Cost Calculator</h2>
+  <p>Estimate the bill based on energy usage and unit rate.</p>
+  <div class="calculator-box">
+    <input type="number" id="unitInput" placeholder="Units used (kWh)" />
+    <input type="number" id="rateInput" placeholder="Cost per unit (₹)" value="5" />
+    <button onclick="calculateCost()">Calculate</button>
+    <div id="costResult"></div>
+  </div>
+   </section>
+
 
     <!-- Device Control Placeholder -->
     <section id="devices" class="device-control-section full-page-section">
