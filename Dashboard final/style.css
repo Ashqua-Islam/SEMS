@@ -365,6 +365,53 @@ body.dark .alert-section li {
   cursor: pointer;
 }
 
+.cost-calculator-section {
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.calculator-box {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 320px;
+  width: 100%;
+}
+
+.calculator-box input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: var(--bg-2);
+  color: var(--text);
+}
+
+.calculator-box button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.calculator-box #costResult {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+
 /* ---------- Footer ---------- */
 footer {
   margin-top: auto;
@@ -457,3 +504,4 @@ footer {
   aside.closed { transform: translateX(-100%); }
   aside.open { transform: translateX(0); }
 }
+
